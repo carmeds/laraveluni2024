@@ -19,10 +19,11 @@ class ProductoFactory extends Factory
      */
     public function definition(): array
     {
+        $ruta='images/productos/';
         return [
             'nombre'=>fake()->word(),
             'precio'=>fake()->randomFloat(2),
-            'imagenchica'=>'imagenes/imch/foto'.fake()->numberBetween(0,100).'.jpg',
+            'imagenchica'=>$ruta.'foto00.jpg',
             'preciorebajado'=>fake()->randomDigitNotNull(),
             'categoria_id'=>Categoria::inRandomOrder()->first()->id,
             'created_at'=>Carbon::now(),
